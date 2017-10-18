@@ -46,8 +46,8 @@
 		4186470D1F84CAFE0005DF26 = {
 			isa = PBXGroup;
 			children = (
-				41948DFD1F97DE7E008FA743 /* build */,
 				41948DFE1F97DE7E008FA743 /* dependencies */,
+				41948DFD1F97DE7E008FA743 /* build */,
 				418647181F84CAFE0005DF26 /* FEM */,
 				418647171F84CAFE0005DF26 /* Products */,
 			);
