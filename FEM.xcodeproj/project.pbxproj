@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4186471A1F84CAFE0005DF26 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 418647191F84CAFE0005DF26 /* main.cpp */; };
 		41948DFC1F97D44B008FA743 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41948DFA1F97D44B008FA743 /* test.cpp */; settings = {ASSET_TAGS = (); }; };
+		41948E0A1F981499008FA743 /* StiffnessMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41948E081F981499008FA743 /* StiffnessMatrix.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,10 +27,12 @@
 /* Begin PBXFileReference section */
 		418647161F84CAFE0005DF26 /* FEM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FEM; sourceTree = BUILT_PRODUCTS_DIR; };
 		418647191F84CAFE0005DF26 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		41948DFA1F97D44B008FA743 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		41948DFA1F97D44B008FA743 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = test.cpp; path = FEM/test.cpp; sourceTree = SOURCE_ROOT; };
 		41948DFB1F97D44B008FA743 /* test.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = test.hpp; sourceTree = "<group>"; };
-		41948DFD1F97DE7E008FA743 /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; path = build; sourceTree = "<group>"; };
-		41948DFE1F97DE7E008FA743 /* dependencies */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dependencies; sourceTree = "<group>"; };
+		41948DFD1F97DE7E008FA743 /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = build; path = ../build; sourceTree = "<group>"; };
+		41948DFE1F97DE7E008FA743 /* dependencies */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dependencies; sourceTree = SOURCE_ROOT; };
+		41948E081F981499008FA743 /* StiffnessMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StiffnessMatrix.cpp; sourceTree = "<group>"; };
+		41948E091F981499008FA743 /* StiffnessMatrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StiffnessMatrix.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +49,6 @@
 		4186470D1F84CAFE0005DF26 = {
 			isa = PBXGroup;
 			children = (
-				41948DFE1F97DE7E008FA743 /* dependencies */,
-				41948DFD1F97DE7E008FA743 /* build */,
 				418647181F84CAFE0005DF26 /* FEM */,
 				418647171F84CAFE0005DF26 /* Products */,
 			);
@@ -64,6 +65,10 @@
 		418647181F84CAFE0005DF26 /* FEM */ = {
 			isa = PBXGroup;
 			children = (
+				41948E081F981499008FA743 /* StiffnessMatrix.cpp */,
+				41948E091F981499008FA743 /* StiffnessMatrix.hpp */,
+				41948DFE1F97DE7E008FA743 /* dependencies */,
+				41948DFD1F97DE7E008FA743 /* build */,
 				418647191F84CAFE0005DF26 /* main.cpp */,
 				41948DFA1F97D44B008FA743 /* test.cpp */,
 				41948DFB1F97D44B008FA743 /* test.hpp */,
@@ -129,6 +134,7 @@
 			files = (
 				4186471A1F84CAFE0005DF26 /* main.cpp in Sources */,
 				41948DFC1F97D44B008FA743 /* test.cpp in Sources */,
+				41948E0A1F981499008FA743 /* StiffnessMatrix.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +144,7 @@
 		4186471B1F84CAFE0005DF26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -180,7 +186,7 @@
 		4186471C1F84CAFE0005DF26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -215,6 +221,16 @@
 		4186471E1F84CAFE0005DF26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					/usr/local/Cellar/eigen/3.3.4/include/eigen3,
+					/Users/AidanHamilton/Desktop/Math_Research/AdvNumericalAnalysis/FEM_Basic/FEM/,
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					/usr/local/Cellar/eigen/3.3.4/include/eigen3,
+					/Users/AidanHamilton/Desktop/Math_Research/AdvNumericalAnalysis/FEM_Basic/FEM/,
+				);
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "$(OTHER_CFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -222,6 +238,19 @@
 		4186471F1F84CAFE0005DF26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/eigen/3.3.4/include/eigen3,
+					/Users/AidanHamilton/Desktop/Math_Research/AdvNumericalAnalysis/FEM_Basic/FEM/,
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					/usr/local/Cellar/eigen/3.3.4/include/eigen3,
+					/Users/AidanHamilton/Desktop/Math_Research/AdvNumericalAnalysis/FEM_Basic/FEM/,
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					/Users/AidanHamilton/Desktop/Math_Research/AdvNumericalAnalysis/FEM_Basic/FEM/,
+					/usr/local/Cellar/eigen/3.3.4/include/eigen3,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
