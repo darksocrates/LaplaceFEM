@@ -15,6 +15,13 @@ using namespace std;
 #include "Eigen/Dense"
 using namespace Eigen;
 #include "Eigen/Sparse"
-using namespace Eigen; 
+using namespace Eigen;
+#include <Eigen/LU>
+using namespace Eigen;
+#include <fstream>
+#include <vector> 
+
+
+MatrixXd StiffnessMatrix(vector<vector<int>>& nodes, vector<vector<double>>& nodepoints)
 
 #endif /* StiffnessMatrix_hpp */
