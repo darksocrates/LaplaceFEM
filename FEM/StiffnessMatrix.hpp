@@ -21,7 +21,6 @@ using namespace Eigen;
 #include <fstream>
 
 
-
 #ifndef StiffnessMatrix_hpp
 #define StiffnessMatrix_hpp
 MatrixXd StiffnessMatrix(vector<vector<int>>& nodes, vector<vector<double>>& nodepoints);
