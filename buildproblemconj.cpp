@@ -8,7 +8,6 @@
 
 #include "buildproblemconj.hpp"
 
-
 /*
  NOTES
  
@@ -194,7 +193,6 @@ std::tuple<SparseMatrix<double,RowMajor>,VectorXd> buildproblemconj(vector<vecto
                     
                     RHS(k)  = RHS(k) - it.value()*RHS(boundarynodes[iter]);
                     it.valueRef() = 0;
-                    
                 }
                 
             }
